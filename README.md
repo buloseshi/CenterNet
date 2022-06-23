@@ -164,6 +164,12 @@ img/street.jpg
 4. 在centernet.py里面修改model_path以及classes_path。**model_path指向训练好的权值文件，在logs文件夹里。classes_path指向检测类别所对应的txt。**  
 5. 运行get_map.py即可获得评估结果，评估结果会保存在map_out文件夹中。
 
+##更新
+a.使用了自适应归一化
+b.修改了激活函数
+c.修改了高斯核
+d.修改了
+
 
 ## Reference
 https://github.com/xuannianz/keras-CenterNet      
