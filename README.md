@@ -26,7 +26,7 @@ BiliBili视频中的原仓库地址为：https://github.com/bubbliiiing/centerne
 | COCO-Train2017 | [centernet_hourglass_coco.pth](https://github.com/bubbliiiing/centernet-pytorch/releases/download/v1.0/centernet_hourglass_coco.pth) | COCO-Val2017 | 512x512 | 38.4 | 56.8 
 
 ## 所需环境
-torch==1.2.0
+torch==1.7.0
 
 ## 注意事项
 代码中的centernet_resnet50_voc.pth是使用voc数据集训练的。    
