@@ -13,11 +13,6 @@
 8. [评估步骤 How2eval](#评估步骤)
 9. [参考资料 Reference](#Reference)
 
-## Top News
-**`2022-04`**:**进行了大幅度的更新，支持step、cos学习率下降法、支持adam、sgd优化器选择、支持学习率根据batch_size自适应调整、新增图片裁剪。支持多GPU训练，新增各个种类目标数量计算，新增heatmap。**  
-BiliBili视频中的原仓库地址为：https://github.com/bubbliiiing/centernet-pytorch/tree/bilibili
-
-**`2021-10`**:**进行了大幅度的更新，增加了大量注释、增加了大量可调整参数、对代码的组成模块进行修改、增加fps、视频预测、批量预测等功能。**   
 
 ## 性能情况
 | 训练数据集 | 权值文件名称 | 测试数据集 | 输入图片大小 | mAP 0.5:0.95 | mAP 0.5 |
