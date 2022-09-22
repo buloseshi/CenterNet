@@ -2,23 +2,7 @@
 ---
 
 
-## 目录
-1. [仓库更新 Top News](#仓库更新)
-2. [性能情况 Performance](#性能情况)
-3. [所需环境 Environment](#所需环境)
-4. [注意事项 Attention](#注意事项)
-5. [文件下载 Download](#文件下载)
-6. [训练步骤 How2train](#训练步骤)
-7. [预测步骤 How2predict](#预测步骤)
-8. [评估步骤 How2eval](#评估步骤)
-9. [参考资料 Reference](#Reference)
 
-
-## 性能情况
-| 训练数据集 | 权值文件名称 | 测试数据集 | 输入图片大小 | mAP 0.5:0.95 | mAP 0.5 |
-| :-----: | :-----: | :------: | :------: | :------: | :-----: |
-| VOC07+12 | [centernet_resnet50_voc.pth](https://github.com/bubbliiiing/centernet-pytorch/releases/download/v1.0/centernet_resnet50_voc.pth) | VOC-Test07 | 512x512 | - | 77.1
-| COCO-Train2017 | [centernet_hourglass_coco.pth](https://github.com/bubbliiiing/centernet-pytorch/releases/download/v1.0/centernet_hourglass_coco.pth) | COCO-Val2017 | 512x512 | 38.4 | 56.8 
 
 ## 所需环境
 torch==1.7.0
@@ -29,36 +13,15 @@ torch==1.7.0
 **注意不要使用中文标签，文件夹中不要有空格！**     
 **在训练前需要务必在model_data下新建一个txt文档，文档中输入需要分的类，在train.py中将classes_path指向该文件**。     
 
-## 文件下载 
-训练所需的centernet_resnet50_voc.pth、centernet_hourglass_coco.pth和主干的权值可在百度网盘中下载。    
-链接: https://pan.baidu.com/s/1YOQgpCiXPKiXC9Wgn6Kt0w     
-提取码: 589g    
 
 centernet_resnet50_voc.pth是voc数据集的权重。    
 centernet_hourglass_coco.pth是coco数据集的权重。    
 
-VOC数据集下载地址如下，里面已经包括了训练集、测试集、验证集（与测试集一样），无需再次划分：  
-链接: https://pan.baidu.com/s/19Mw2u_df_nBzsC2lg20fQA   
-提取码: j5ge   
 
 ## 训练步骤
-### a、训练VOC07+12数据集
-1. 数据集的准备   
-**本文使用VOC格式进行训练，训练前需要下载好VOC07+12的数据集，解压后放在根目录**  
+ 
 
-2. 数据集的处理   
-修改voc_annotation.py里面的annotation_mode=2，运行voc_annotation.py生成根目录下的2007_train.txt和2007_val.txt。   
-
-3. 开始网络训练   
-train.py的默认参数用于训练VOC数据集，直接运行train.py即可开始训练。   
-
-4. 训练结果预测   
-训练结果预测需要用到两个文件，分别是centernet.py和predict.py。我们首先需要去centernet.py里面修改model_path以及classes_path，这两个参数必须要修改。   
-**model_path指向训练好的权值文件，在logs文件夹里。   
-classes_path指向检测类别所对应的txt。**   
-完成修改后就可以运行predict.py进行检测了。运行后输入图片路径即可检测。   
-
-### b、训练自己的数据集
+### 训练自己的数据集
 1. 数据集的准备  
 **本文使用VOC格式进行训练，训练前需要自己制作好数据集，**    
 训练前将标签文件放在VOCdevkit文件夹下的VOC2007文件夹下的Annotation中。   
